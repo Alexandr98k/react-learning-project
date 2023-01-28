@@ -7,7 +7,11 @@ function ExpenseItem({ title, date, amount }) {
   const [titleName, setTitleName] = useState(title);
 
   const handleClick = function () {
-    setTitleName('update');
+    if (titleName === title) {
+      setTitleName('update');
+    } else {
+      setTitleName(title);
+    }
   };
 
   return (

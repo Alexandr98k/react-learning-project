@@ -25,9 +25,15 @@ function App() {
     },
   ];
 
+  //створюємо функцію-обробник для виведення доданого запису в батьківський компонент
+  const addExpenseHandler = function (expense) {
+    console.log(expense);
+  };
+
   return (
     <div className="App">
-      <NewExpense />
+      {/* Передаємо в пропси компоненту функцію-обробник */}
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
