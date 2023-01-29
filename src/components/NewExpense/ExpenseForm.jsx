@@ -1,7 +1,7 @@
 import './ExpenseForm.css';
 import { useState } from 'react';
 
-function ExpenseForm({ onSaveExpenseData }) {
+function ExpenseForm({ onSaveExpenseData, onStopEditing }) {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
@@ -25,7 +25,6 @@ function ExpenseForm({ onSaveExpenseData }) {
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate),
-      id: Math.random().toString(),
     };
 
     //call function from parent component, which was send using props value
@@ -73,6 +72,9 @@ function ExpenseForm({ onSaveExpenseData }) {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={onStopEditing}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
