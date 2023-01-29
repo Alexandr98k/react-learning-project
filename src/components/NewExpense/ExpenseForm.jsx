@@ -25,6 +25,7 @@ function ExpenseForm({ onSaveExpenseData }) {
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate),
+      id: Math.random().toString(),
     };
 
     //call function from parent component, which was send using props value
