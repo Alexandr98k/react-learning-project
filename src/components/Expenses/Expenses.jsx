@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Card from '../UI/Card';
 import ExpensesList from './ExpensesList';
 import ExpensesFilter from './ExpensesFilter';
+import ExpensesChart from './ExpensesChart';
 import './Expenses.css';
 
 function Expenses({ expenses }) {
@@ -19,6 +20,7 @@ function Expenses({ expenses }) {
     <Card className="expenses">
       {/* додавання компоненту властивості селектед-рік(із стейту) щоб ця властивість була заумовчанням вибрана на початку запуску програми.  */}
       <ExpensesFilter selectedYear={filteredYear} onChangeFilter={addExpenseFilterHandler} />
+      <ExpensesChart expenses={filteredExpenses} />
       <ExpensesList items={filteredExpenses} />
     </Card>
   );

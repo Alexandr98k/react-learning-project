@@ -30,6 +30,7 @@ function NewExpense({ onAddExpense }) {
 
   return (
     <div className="new-expense">
+      {/* робимо умовний рендеринг */}
       {!isEditing && (
         <button type="submit" onClick={startEditingHandler}>
           Add New Expense
